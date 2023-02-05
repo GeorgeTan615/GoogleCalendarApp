@@ -1,0 +1,30 @@
+stages:
+    - test
+    - build
+
+
+test:
+    stage: test
+    image: python:3.8-alpine
+    script:
+        - echo "Testing"
+          pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+        - pip3 install --upgrade pip
+        - pip install coverage
+        - pip3 install python-dateutil
+        - python3 MyEventManagerTest.py 
+        # - coverage run -m --branch unittest MyEventManagerTest
+        # - coverage report -m
+        - coverage run MyEventManagerTest.py
+        - coverage report
+
+build:
+    stage: build
+    image: python:3.8-alpine
+    script: 
+        - echo "Building"
+        - pip3 install python-dateutil
+          pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+        - python3 MyEventManager.py
+
+

@@ -1,0 +1,9 @@
+[report]
+exclude_lines =
+    if __name__ == .__main__.:
+    def get_calendar_api
+    def get_upcoming_events
+    def main
+    class App
+    def generateAutoInputAndOutput
+    

@@ -1,0 +1,8 @@
+credentials.json
+credential.json
+__pycache__
+token.pickle
+env
+.coverage
+requirements.txt
+consoleTest.py
